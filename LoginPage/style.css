@@ -1,0 +1,78 @@
+.login {
+    font-family: Poppins;
+    display: block;
+}
+.greeting {
+    margin-top: 250px;
+    margin-left: 200px;
+    margin-right: 750px;
+    padding: auto;
+
+}
+.greeting h2 {
+    font-size: 40px;
+    color: rgb(42,181,251);
+    display: block;
+}
+.greeting p{
+    font-size: 30px;
+}
+.LoginForm {
+    border: 2px solid;
+    border-radius: 20px;
+    margin-top: -325px;
+    margin-left: 1000px;
+    margin-bottom: -600px;
+    margin-right: 200px;
+    display: block;
+    text-align: center;
+}
+.LoginForm .anthentication h2 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    color: rgb(42,181,251)
+}
+
+.LoginForm .anthentication .pick {
+    font-size: 20px;
+}
+
+.LoginForm .login {
+    border-top: 2px solid;
+    margin-top: 10px;
+}
+.LoginForm .login .username input {
+    margin-top: 50px;
+    font-family: Poppins;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 20px;
+}
+.LoginForm .login .password input {
+    margin-top: 30px;
+    font-family: Poppins;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 20px;
+}
+.LoginForm .login .button button {
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-emphasis: none;
+    font-family: Poppins;
+    text-align: center;
+    border-radius: 23px;
+    font-size: 20px;
+    background-color: rgb(42,181,251);
+    color: white;
+}
+::placeholder{
+    color: rgb(42,181,251);
+}
+body {
+    background: url(https://i.pinimg.com/originals/87/bc/cd/87bccd6362b703f294f768ca2a94e97f.jpg);
+}
+
