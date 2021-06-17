@@ -1,9 +1,3 @@
-(function() {
-    'use strict'
-
-    feather.replace();
-})()
-
 function loadRegisteredClass() {
     var registeredClassCard =
         '<tr>' +
@@ -26,7 +20,14 @@ function loadRegisteredClass() {
     }
 }
 
+function activeSidebar() {
+    setTimeout(function() {
+        document.getElementsByClassName('nav-link')[1].className += ' active';
+    }, 500);
+}
+
 function main() {
     loadRegisteredClass();
+    activeSidebar();
 }
 main();

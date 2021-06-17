@@ -1,53 +1,38 @@
-/* globals Chart:false, feather:false */
+function loadRegisteredClass() {
+    var registeredClassCard =
+        '<tr>' +
+        '  <th scope="row">COURSE_NAME</th>' +
+        '  <td>EXAM_DAY</td>' +
+        '  <td>EXAM_TIME</td>' +
+        '  <td>ROOM</td>' +
+        '</tr>';
 
-(function () {
-  'use strict'
+    var registeredClassDtos = StudentRequest.getRegisteredSectionClass();
+    for (var i = 0; i < registeredClassDtos.length; i++) {
 
-  feather.replace()
+        var courseDto = CourseRequest.findOne(registeredClassDtos[i].courseId);
+        // get exam date
+        var examDate = new Date(registeredClassDtos[i].examDate);
+        var examDay = examDate.toLocaleDateString();
+        var examTime = examDate.toLocaleTimeString();
 
-  // Graphs
-  var ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ],
-      datasets: [{
-        data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
-        ],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: false
-          }
-        }]
-      },
-      legend: {
-        display: false
-      }
+        var registeredClassCardTmp = registeredClassCard;
+        registeredClassCardTmp = registeredClassCardTmp.replace('COURSE_NAME', courseDto.name);
+        registeredClassCardTmp = registeredClassCardTmp.replace('EXAM_DAY', examDay);
+        registeredClassCardTmp = registeredClassCardTmp.replace('EXAM_TIME', examTime);
+        registeredClassCardTmp = registeredClassCardTmp.replace('ROOM', registeredClassDtos[i].room);
+        document.getElementById('registered-class-card').innerHTML += registeredClassCardTmp;
     }
-  })
-})()
+}
+
+function activeSidebar() {
+    setTimeout(function() {
+        document.getElementsByClassName('nav-link')[3].className += ' active';
+    }, 500);
+}
+
+function main() {
+    loadRegisteredClass();
+    activeSidebar();
+}
+main();
