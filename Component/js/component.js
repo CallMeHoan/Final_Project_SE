@@ -19,12 +19,7 @@ $(document).ready(function() {
 			<a class="navbar-brand col col me-0 px-3" href="#">Group 06</a>
 		</header>`);
 
-    if (window.location.href.includes('/student/'))
-        $("#sidebarMenu").load('../../Component/sidebar-student.html', load);
-    else if (window.location.href.includes('/manager/'))
-        $("#sidebarMenu").load('../../Component/sidebar-manager.html', load);
-    else if (window.location.href.includes('/lecturer/'))
-        $("#sidebarMenu").load('../../Component/sidebar-lecturer.html', load);
+    $("#sidebarMenu").load('../../Component/sidebar-student.html', load);
 
 })
 
