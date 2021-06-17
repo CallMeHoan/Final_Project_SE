@@ -16,7 +16,6 @@ $('.btn-sign-in').click(function() {
         var userDto = LoginRequest.login(data['username'], data['password']);
 
         if (userDto.httpStatus != 'OK') {
-            alert(userDto.message);
             document.getElementsByClassName('loading-gif')[0].style.cssText = 'display:none;';
         }
         if (userDto.httpStatus == 'OK') {
